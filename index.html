@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>闫浩文教授学术轨迹图</title>
+    
+    <!-- 引入 Leaflet 库的样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- 引入你自己的外部样式表 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="page-title">闫浩文教授学术轨迹图</h1>
+
+    <div class="main-container">
+        <div class="map-container">
+            <div class="loading-overlay" id="loading-overlay">
+                <div class="loading-spinner"></div>
+            </div>
+            
+            <!-- 地图上的控制按钮 -->
+            <div class="map-controls">
+                <button id="play-pause-btn" title="播放/暂停 (空格)">⏸️</button>
+                <button id="reset-btn" title="重置 (R)">🔄</button>
+                <div class="speed-control-container">
+                    <button id="speed-btn" title="切换速度">1.0x</button>
+                    <div class="speed-menu" id="speed-menu">
+                        <!-- 速度选项将由JS动态生成 -->
+                    </div>
+                </div>
+            </div>
+            
+            <div id="map"></div>
+        </div>
+
+        <div class="controls-container">
+            <h2>统计面板</h2>
+            <div class="stats-panel">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number" id="total-locations">0</div>
+                        <div class="stat-label">地点总数</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="total-years">0</div>
+                        <div class="stat-label">历程时间</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="current-progress">0%</div>
+                        <div class="stat-label">完成进度</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="transport-modes">0</div>
+                        <div class="stat-label">交通方式</div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>进度控制</h2>
+            <div class="slider-container">
+                <span>起点</span>
+                <input type="range" id="timeline-slider" min="0" value="0" disabled>
+                <span>终点</span>
+            </div>
+            
+            <h2>轨迹详情</h2>
+            <div id="info-display">
+                <p>加载中...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入 Leaflet 库的 JS 文件 -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- 引入你自己的外部 JS 文件 -->
+    <script src="script.js"></script>
+</body>
+</html>

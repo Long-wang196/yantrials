@@ -1,0 +1,169 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "时间段": "1969.01 - 1987.07",
+        "地点": "甘肃省民勤县",
+        "事件": "出生与中小学",
+        "交通工具建议": "自行车/汽车"
+      },
+      "geometry": { "type": "Point", "coordinates": [ 103.09011, 38.62409 ] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "时间段": "1987.09 - 1991.07",
+        "地点": "武汉",
+        "事件": "武汉测绘科技大学 (本科)",
+        "交通工具建议": "火车",
+        "transport_mode": "train"
+      },
+      "geometry": { "type": "Point", "coordinates": [ 114.298572, 30.584355 ] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "时间段": "1991.08 - 1993.07",
+        "地点": "甘肃省",
+        "事件": "甘肃省测绘局",
+        "交通工具建议": "火车",
+        "transport_mode": "train"
+      },
+      "geometry": { "type": "Point", "coordinates": [ 103.823557, 36.058039 ] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "时间段": "1993.09 - 1996.06",
+        "地点": "武汉",
+        "事件": "武汉测绘科技大学 (硕士)",
+        "交通工具建议": "火车",
+        "transport_mode": "train"
+      },
+      "geometry": { "type": "Point", "coordinates": [ 114.298572, 30.584355 ] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "时间段": "1996.07 - 1999.08",
+        "地点": "兰州",
+        "事件": "兰州铁道学院 (任教)",
+        "交通工具建议": "火车",
+        "transport_mode": "train"
+      },
+      "geometry": { "type": "Point", "coordinates": [ 103.823557, 36.058039 ] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "时间段": "1999.09 - 2000.08",
+        "地点": "武汉",
+        "事件": "武汉大学 (博士)",
+        "交通工具建议": "火车",
+        "transport_mode": "train"
+      },
+      "geometry": { "type": "Point", "coordinates": [ 114.298572, 30.584355 ] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "时间段": "2000.09 - 2001.08",
+        "地点": "宁波",
+        "事件": "武汉大学 (博士)",
+        "交通工具建议": "火车",
+        "transport_mode": "train"
+      },
+      "geometry": { "type": "Point", "coordinates": [ 121.549792, 29.868388 ] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "时间段": "2001.09 - 2002.03",
+        "地点": "深圳",
+        "事件": "武汉大学 (博士)",
+        "交通工具建议": "火车",
+        "transport_mode": "train"
+      },
+      "geometry": { "type": "Point", "coordinates": [ 114.085947, 22.547000 ] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "时间段": "2002.04 - 2003.04",
+        "地点": "香港",
+        "事件": "香港理工大学",
+        "交通工具建议": "飞机",
+        "transport_mode": "plane"
+      },
+      "geometry": { "type": "Point", "coordinates": [ 114.177216, 22.302711 ] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "时间段": "2003.05 - 2004.06",
+        "地点": "兰州",
+        "事件": "兰州交通大学",
+        "交通工具建议": "飞机/火车",
+        "transport_mode": "plane"
+      },
+      "geometry": { "type": "Point", "coordinates": [ 103.823557, 36.058039 ] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "时间段": "2005.06 - 2006.06",
+        "地点": "瑞士苏黎世",
+        "事件": "苏黎世大学",
+        "交通工具建议": "飞机",
+        "transport_mode": "plane"
+      },
+      "geometry": { "type": "Point", "coordinates": [ 8.541694, 47.3768866 ] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "时间段": "2006.07 - 2010.02",
+        "地点": "兰州",
+        "事件": "兰州交通大学",
+        "交通工具建议": "飞机/火车",
+        "transport_mode": "plane"
+      },
+      "geometry": { "type": "Point", "coordinates": [ 103.823557, 36.058039 ] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "时间段": "2010.03 - 2014.06",
+        "地点": "加拿大滑铁卢",
+        "事件": "滑铁卢大学",
+        "交通工具建议": "飞机",
+        "transport_mode": "plane"
+      },
+      "geometry": { "type": "Point", "coordinates": [ -80.52041, 43.46426 ] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "时间段": "2014.12 - 2015.02",
+        "地点": "美国弗吉尼亚州",
+        "事件": "老道明大学",
+        "交通工具建议": "飞机",
+        "transport_mode": "plane"
+      },
+      "geometry": { "type": "Point", "coordinates": [ -76.285873, 36.8529 ] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "时间段": "2015.03 - 至今",
+        "地点": "兰州",
+        "事件": "兰州交通大学",
+        "交通工具建议": "飞机/火车",
+        "transport_mode": "plane"
+      },
+      "geometry": { "type": "Point", "coordinates": [ 103.823557, 36.058039 ] }
+    }
+  ]
+}
