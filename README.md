@@ -31,11 +31,12 @@
 
 ```
 .
-├── 📂assets/                  # (建议) 存放静态资源
-│   ├── Yan_trails.geojson    # 核心轨迹数据文件
-│   ├── plane.svg             # 飞机图标
-│   ├── train.svg             # 火车图标
-│   └── ... (其他图标)
+├── Yan_trails.geojson    # 核心轨迹数据文件
+├── plane.svg             # 飞机图标
+├── train.svg             # 火车图标
+├
+├──(其他图标)
+├
 ├── index.html                # HTML 结构文件
 ├── style.css                 # CSS 样式文件
 └── script.js                 # JavaScript 逻辑文件
@@ -123,11 +124,10 @@ The project's codebase is clearly organized into three core files for easy maint
 
 ```
 .
-├── 📂assets/                  # (Recommended) For static assets
-│   ├── Yan_trails.geojson    # The core trajectory data file
-│   ├── plane.svg             # Plane icon
-│   ├── train.svg             # Train icon
-│   └── ... (other icons)
+├── Yan_trails.geojson    # The core trajectory data file
+├── plane.svg             # Plane icon
+├──  train.svg             # Train icon
+├── ... (other icons)
 ├── index.html                # HTML structure file
 ├── style.css                 # CSS styles file
 └── script.js                 # JavaScript logic file
