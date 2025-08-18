@@ -2,7 +2,7 @@
 
 这是一个基于 Leaflet.js 的交互式地图项目，旨在生动、动态地展示闫浩文教授的学术生涯与人生足迹。通过动画轨迹、时间轴控制和信息面板的联动，用户可以直观地了解其从出生地到世界各地求学、工作的完整历程。
 
-[**➡️ 点击查看在线演示 (View Live Demo)**](https://your-demo-link.com) <!-- 请将 # 替换为您的实际演示链接 -->
+[**➡️ 点击查看在线演示 (View Live Demo)**][(https://long-wang196.github.io/yantrials/)]
 
 ![项目截图](https://user-images.githubusercontent.com/your-username/your-repo/assets/screenshot.gif) <!-- 请替换为您的项目截图或GIF动图链接 -->
 
@@ -95,7 +95,7 @@
 
 This is an interactive map project built with Leaflet.js, designed to dynamically visualize the academic and life journey of Professor Yan Haowen. Through animated trajectories, timeline controls, and a synchronized information panel, users can intuitively follow his path from his birthplace to various institutions for study and work around the world.
 
-[**➡️ View Live Demo**](https://your-demo-link.com) <!-- Replace # with your actual demo link -->
+[**➡️ View Live Demo**](https://long-wang196.github.io/yantrials/) 
 
 ![Project Screenshot](https://user-images.githubusercontent.com/your-username/your-repo/assets/screenshot.gif) <!-- Replace this with a link to your project's screenshot or GIF -->
 
