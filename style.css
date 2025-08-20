@@ -1,475 +1,593 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
 
 :root {
+    /* --- Light Mode Colors (Default) --- */
     --primary-color: #3b82f6;
     --primary-color-light: #eff6ff;
     --secondary-color: #6b7280;
     --secondary-color-light: #f3f4f6;
     --background-color: #f8f9fa;
+    --background-gradient-end: #e0f2fe;
+    --controls-bg-color: #fff;
+    --controls-bg-gradient-end: #f8fafc;
     --text-color: #333;
     --text-color-light: #4b5563;
     --border-color: #e5e7eb;
     --shadow-color: rgba(0, 0, 0, 0.1);
+    --popup-bg-color: rgba(255, 255, 255, 0.95);
+    --controls-btn-bg: rgba(255, 255, 255, 0.9);
+    --slider-bg: rgba(255, 255, 255, 0.7);
+    --slider-bg-hover: rgba(255, 255, 255, 0.9);
+
+    --plane-color: #9C27B0; --plane-color-rgb: 156, 39, 176;
+    --train-color: #2196F3; --train-color-rgb: 33, 150, 243;
+    --bus-color: #FF9800; --bus-color-rgb: 255, 152, 0;
+    --bicycle-color: #4CAF50; --bicycle-color-rgb: 76, 175, 80;
+    --walk-color: #795548; --walk-color-rgb: 121, 85, 72;
+    --paper-color: #3b82f6;
+    --book-color: #8b5cf6;
+    --report-color: #ec4899;
+    --patent-color: #10b981;
+    --software-color: #f59e0b;
+    --national-proj-color: #ef4444;
+    --provincial-proj-color: #f97316;
+    --other-proj-color: #eab308;
+    --cumulative-color: #4b5563;
     --font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    --plane-color: #9C27B0;
-    --train-color: #2196F3;
-    --bus-color: #FF9800;
-    --bicycle-color: #4CAF50;
-    --walk-color: #795548;
-    --success-color: #10b981;
-    --warning-color: #f59e0b;
+}
+
+/* --- NEW: Tech Dark Mode Color Palette (V4.1) --- */
+body.dark-mode {
+    --primary-color: #0ea5e9; /* Tech Blue */
+    --primary-color-light: rgba(14, 165, 233, 0.1);
+    --secondary-color: #94a3b8; /* Lighter Gray for text */
+    --secondary-color-light: #334155; /* Mid-dark gray for surfaces */
+    --background-color: #0f172a; /* Deep Slate Blue */
+    --background-gradient-end: #020617; /* Even darker */
+    --controls-bg-color: #0f172a;
+    --controls-bg-gradient-end: #0f172a;
+    --text-color: #e2e8f0; /* Light text for dark bg */
+    --text-color-light: #94a3b8;
+    --border-color: rgba(148, 163, 184, 0.2); /* Subtle borders */
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --popup-bg-color: rgba(30, 41, 59, 0.9);
+    --controls-btn-bg: rgba(30, 41, 59, 0.8);
+    --slider-bg: rgba(30, 41, 59, 0.7);
+    --slider-bg-hover: rgba(30, 41, 59, 0.9);
+    
+    --plane-color: #f472b6; --plane-color-rgb: 244, 114, 182;
+    --train-color: #60a5fa; --train-color-rgb: 96, 165, 250;
+    --cumulative-color: #94a3b8;
+
+    /* UNIFIED ACCENT COLORS for Dark Mode */
+    --paper-color: var(--primary-color);
+    --book-color: var(--primary-color);
+    --report-color: var(--primary-color);
+    --patent-color: var(--primary-color);
+    --software-color: var(--primary-color);
+    --national-proj-color: var(--primary-color);
+    --provincial-proj-color: var(--primary-color);
+    --other-proj-color: var(--primary-color);
 }
 
 /* --- 基础与动画定义 --- */
-@keyframes breathe {
-    0%, 100% { transform: scale(1.02); box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2); }
-    50% { transform: scale(1.03); box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3); }
-}
-@keyframes pulse-glow {
-    0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7), 0 0 0 0 rgba(59, 130, 246, 0.7); }
-    70% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0), 0 0 0 20px rgba(59, 130, 246, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0), 0 0 0 0 rgba(59, 130, 246, 0); }
-}
-@keyframes slideIn {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-@keyframes flowingDash {
-    to { stroke-dashoffset: -20; }
-}
-@keyframes spin {
-    to { transform: rotate(360deg); }
-}
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-5px); }
-}
+@keyframes slideIn { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes spin { to { transform: rotate(360deg); } }
 
 /* --- 页面布局 --- */
 body {
-    font-family: var(--font-family);
-    margin: 0;
-    padding: 20px;
-    background: linear-gradient(135deg, var(--background-color) 0%, #e0f2fe 100%);
-    color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
+    font-family: var(--font-family); margin: 0; padding: 20px;
+    background: linear-gradient(135deg, var(--background-color) 0%, var(--background-gradient-end) 100%);
+    color: var(--text-color); display: flex; flex-direction: column;
+    align-items: center; min-height: 100vh;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
-
+body.dark-mode { background: #020617; } /* Solid very-dark background */
 .page-title {
-    color: var(--text-color);
-    margin-bottom: 20px;
-    font-weight: 500;
-    font-size: 2em;
-    background: linear-gradient(135deg, var(--primary-color), var(--plane-color));
+    color: var(--text-color); 
+    margin-bottom: 20px; 
+    font-weight: 500; 
+    font-size: 2.5em;
+    text-align: center; 
+    animation: slideIn 0.6s ease-out;
+    
+    /* 1. 更新渐变色：从主色调蓝到一个更明亮的天空蓝，更契合白天模式 */
+    background: linear-gradient(135deg, var(--primary-color), #60a5fa);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-align: center;
-    animation: slideIn 0.6s ease-out;
-}
 
+    /* 2. 添加一个柔和的、有层次感的阴影，营造立体感 */
+    /* 这是一个微妙的、向下偏移的蓝色阴影，显得非常精致 */
+    text-shadow: 0 2px 8px rgba(59, 130, 246, 0.25);
+}
+body.dark-mode .page-title {
+    color: var(--primary-color); background: none;
+    -webkit-text-fill-color: unset; text-shadow: 0 0 10px rgba(14, 165, 233, 0.5);
+}
 .main-container {
-    display: flex;
-    flex-direction: row;
-    gap: 25px;
-    width: 100%;
-    max-width: 1600px;
+    display: flex; flex-direction: row; gap: 25px;
+    width: 100%; max-width: 1920px; 
     animation: slideIn 0.8s ease-out;
 }
 
-/* --- 地图容器 --- */
-.map-container {
-    flex-grow: 1;
-    position: relative;
+/* --- 地图容器与控件 --- */
+.map-container { flex-grow: 1; position: relative; }
+#map {
+    height: 85vh; width: 100%; border: 1px solid var(--border-color);
+    border-radius: 12px; box-shadow: 0 8px 20px var(--shadow-color);
+    transition: box-shadow 0.3s ease, border-color 0.4s ease;
 }
-
-.loading-overlay, .journey-end-overlay {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(5px);
-    opacity: 1;
-    transition: opacity 0.5s ease;
-    pointer-events: none;
-}
+#map:hover { box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); }
+body.dark-mode #map { box-shadow: 0 8px 30px var(--shadow-color); }
+.leaflet-container { transition: background-color 0.4s ease; }
+body.dark-mode .leaflet-container { background: #1e293b; } /* Dark map background */
 .loading-overlay {
-     pointer-events: auto;
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    display: flex; justify-content: center; align-items: center; z-index: 1000;
+    border-radius: 12px; background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px); transition: opacity 0.5s ease;
+    pointer-events: auto;
 }
-.journey-end-overlay {
-    flex-direction: column;
-    gap: 10px;
-    font-size: 1.5em;
-    color: var(--primary-color);
-    font-weight: 500;
-    opacity: 0;
-}
-.journey-end-overlay.visible {
-    opacity: 1;
-}
+body.dark-mode .loading-overlay { background: rgba(15, 23, 42, 0.8); }
 .loading-spinner {
     width: 40px; height: 40px; border: 4px solid var(--border-color);
-    border-top: 4px solid var(--primary-color);
-    border-radius: 50%;
+    border-top: 4px solid var(--primary-color); border-radius: 50%;
     animation: spin 1s linear infinite;
 }
-
-/* --- 地图上的控制按钮 --- */
+body.dark-mode .loading-spinner { border-color: rgba(255,255,255,0.1); }
 .map-controls {
-    position: absolute;
-    top: 15px;
-    left: 75px; /* 避开默认的+-按钮 */
-    z-index: 1000;
-    display: flex;
-    flex-direction: row; /* 横向排列 */
-    gap: 10px;
+    position: absolute; top: 15px; left: 75px; z-index: 1000;
+    display: flex; flex-direction: row; gap: 10px;
 }
 .map-controls button {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: none;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    font-weight: 500;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 2px solid rgba(59, 130, 246, 0.1);
-    color: var(--primary-color);
+    width: 50px; height: 50px; border-radius: 50%; border: none;
+    background: var(--controls-btn-bg); backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; font-weight: 500; transition: all 0.3s ease;
+    border: 2px solid rgba(59, 130, 246, 0.1); color: var(--primary-color);
 }
+/* --- 新增：为主题切换图标添加样式 --- */
+/* --- 替换为这个最终版 --- */
+.theme-icon-svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* A bouncier transition */
+}
+
+/* 太阳的专属悬停效果：旋转 */
+#theme-toggle-btn .sun-icon {
+    transform-origin: center;
+}
+#theme-toggle-btn:hover .sun-icon {
+    transform: rotate(90deg);
+}
+
+/* 月亮的专属悬停效果：辉光 */
+#theme-toggle-btn .moon-icon {
+    filter: drop-shadow(0 0 1px rgba(107, 114, 128, 0)); /* Start with no shadow */
+}
+#theme-toggle-btn:hover .moon-icon {
+    transform: scale(1.1);
+    /* In dark mode, the button color is the primary blue, so this will glow blue! */
+    filter: drop-shadow(0 0 5px currentColor);
+}
+
+/* 增加一个图标旋转的悬停效果 */
+.map-controls button:hover .theme-icon-svg {
+    transform: scale(1.1) rotate(25deg);
+}
+body.dark-mode .map-controls button { border: 1px solid var(--border-color); }
 .map-controls button:hover {
-    transform: scale(1.1) translateY(-2px);
-    background: var(--primary-color);
-    color: white;
-    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+    transform: scale(1.1) translateY(-2px); background: var(--primary-color);
+    color: white; box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
 }
-
-/* --- 速度选择控件 --- */
-.speed-control-container {
-    position: relative;
-}
+body.dark-mode .map-controls button:hover { box-shadow: 0 0 20px rgba(14, 165, 233, 0.5); }
+.speed-control-container { position: relative; }
 .speed-menu {
-    position: absolute;
-    top: calc(100% + 10px);
-    left: 50%;
-    transform: translateX(-50%);
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    min-width: 100px;
-    z-index: 1001;
+    position: absolute; top: calc(100% + 10px); left: 50%; transform: translateX(-50%);
+    background: var(--controls-btn-bg); border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    padding: 5px; display: flex; flex-direction: column; gap: 5px; opacity: 0;
+    visibility: hidden; transition: opacity 0.2s ease, transform 0.2s ease;
+    min-width: 100px; z-index: 1001;
 }
-.speed-menu.visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
-}
+body.dark-mode .speed-menu { background: #1e293b; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+.speed-menu.visible { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
 .speed-menu button {
-    font-family: var(--font-family);
-    width: 100%;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--text-color-light);
-    background: transparent;
-    border: none;
-    padding: 8px 20px;
-    border-radius: 6px;
-    text-align: center;
-    cursor: pointer;
+    font-family: var(--font-family); width: 100%; font-size: 14px; font-weight: 500;
+    color: var(--text-color-light); background: transparent; border: none; padding: 8px 20px;
+    border-radius: 6px; text-align: center; cursor: pointer;
 }
-.speed-menu button:hover {
-    background: var(--primary-color-light);
-    color: var(--primary-color);
+.speed-menu button:hover { background: var(--primary-color-light); color: var(--primary-color); }
+body.dark-mode .speed-menu button:hover { background: var(--secondary-color-light); }
+.speed-menu button.active { background: var(--primary-color); color: white; font-weight: bold; }
+.slider-container-map {
+    position: absolute; bottom: 20px; left: 50%;
+    transform: translateX(-50%); width: 80%; max-width: 800px; z-index: 1000;
+    background: var(--slider-bg); backdrop-filter: blur(10px);
+    padding: 8px 20px; border-radius: 50px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    display: flex; align-items: center; transition: all 0.3s ease;
 }
-.speed-menu button.active {
-    background: var(--primary-color);
-    color: white;
-    font-weight: bold;
+.slider-container-map:hover { background: var(--slider-bg-hover); }
+.slider-container-map span { font-size: 12px; color: var(--secondary-color); font-weight: 500; }
+input[type=range] {
+    flex-grow: 1; margin: 0 15px; -webkit-appearance: none; background: transparent;
+    cursor: pointer; height: 8px; border-radius: 4px;
 }
+input[type=range]:focus { outline: none; }
+input[type=range]::-webkit-slider-runnable-track {
+    height: 8px; background: linear-gradient(90deg, var(--primary-color) 0%, var(--border-color) 0%);
+    border-radius: 4px; box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+body.dark-mode input[type=range]::-webkit-slider-runnable-track { background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color-light) 0%); }
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none; width: 20px; height: 20px; border-radius: 50%;
+    background: #fff; border: 3px solid var(--primary-color); margin-top: -6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2); transition: all 0.2s ease;
+}
+input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.1); box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4); }
+body.dark-mode input[type=range]::-webkit-slider-thumb:hover { box-shadow: 0 0 10px var(--primary-color); }
 
-
-#map {
-    height: 85vh; 
-    width: 100%; 
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    box-shadow: 0 8px 20px var(--shadow-color);
-    transition: box-shadow 0.3s ease;
-}
-#map:hover { 
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); 
-}
-
-/* --- 控制面板 --- */
+/* --- 控制面板 (右侧) --- */
 .controls-container {
-    width: 400px; 
-    flex-shrink: 0;
-    background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
-    border-radius: 12px;
-    box-shadow: 0 8px 20px var(--shadow-color);
-    padding: 25px; 
-    box-sizing: border-box;
-    display: flex; 
-    flex-direction: column;
-    border: 1px solid var(--border-color);
-    height: 85vh;
-    transition: transform 0.3s ease;
+    width: 35%; 
+    max-width: 800px;
+    min-width: 400px;
+    flex-shrink: 0; background: linear-gradient(135deg, var(--controls-bg-color) 0%, var(--controls-bg-gradient-end) 100%);
+    border-radius: 12px; box-shadow: 0 8px 20px var(--shadow-color); padding: 25px;
+    box-sizing: border-box; display: flex; flex-direction: column;
+    border: 1px solid var(--border-color); height: 85vh; transition: all 0.4s ease;
 }
-.controls-container:hover { 
-    transform: translateY(-2px); 
-}
-
+body.dark-mode .controls-container { background: var(--background-color); box-shadow: 0 8px 30px var(--shadow-color); }
+.controls-container:hover { transform: translateY(-2px); }
 .controls-container h2 {
-    margin: 20px 0 15px 0; 
-    border-bottom: 2px solid var(--primary-color);
-    padding-bottom: 10px; 
-    text-align: center; 
-    font-weight: 500; 
-    color: var(--primary-color);
-    position: relative;
+    margin: 20px 0 15px 0; border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px; text-align: center; font-weight: 500;
+    color: var(--primary-color); position: relative;
 }
-.controls-container h2:first-of-type { 
-    margin-top: 0; 
-}
+.controls-container h2:first-of-type { margin-top: 0; }
 .controls-container h2::after {
-    content: ''; 
-    position: absolute; 
-    bottom: -2px; 
-    left: 50%;
-    transform: translateX(-50%); 
-    width: 50px; 
-    height: 2px;
+    content: ''; position: absolute; bottom: -2px; left: 50%; transform: translateX(-50%);
+    width: 50px; height: 2px;
     background: linear-gradient(90deg, var(--primary-color), var(--plane-color));
 }
+body.dark-mode .controls-container h2 { border-bottom-width: 1px; text-shadow: 0 0 5px rgba(14, 165, 233, 0.5); }
+body.dark-mode .controls-container h2::after { content: none; }
 
-/* --- 统计面板 --- */
-.stats-panel {
-    background: var(--primary-color-light); 
-    border-radius: 8px; 
-    padding: 15px;
-    border-left: 4px solid var(--primary-color);
-    margin-bottom: 20px;
-}
-.stats-grid { 
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
-    gap: 10px; 
-    text-align: center; 
-}
-.stat-item { 
-    background: white; 
-    padding: 10px; 
-    border-radius: 6px; 
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    transition: transform 0.2s ease;
-}
-.stat-item:hover {
-    transform: translateY(-2px);
-}
-.stat-number { 
-    font-size: 1.5em; 
-    font-weight: bold; 
-    color: var(--primary-color); 
-}
-.stat-label { 
-    font-size: 0.8em; 
-    color: var(--text-color-light); 
-}
-
-/* --- 滑动条 --- */
-.slider-container { 
-    display: flex; 
-    align-items: center; 
-    width: 100%;
-    background: white; 
-    padding: 15px 10px;
-    border-radius: 8px;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05); 
-    margin-bottom: 15px;
-    box-sizing: border-box;
-}
-.slider-container span { 
-    font-size: 14px; 
-    color: var(--secondary-color); 
-    font-weight: 500; 
-}
-input[type=range] {
-    flex-grow: 1; 
-    margin: 0 15px;
-    -webkit-appearance: none; 
-    background: transparent;
-    cursor: pointer; 
-    height: 8px; 
-    border-radius: 4px;
-}
-input[type=range]:focus { 
-    outline: none; 
-}
-input[type=range]::-webkit-slider-runnable-track { 
-    height: 8px; 
-    background: linear-gradient(90deg, var(--primary-color) 0%, var(--border-color) 0%); 
-    border-radius: 4px; 
-    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-}
-input[type=range]::-webkit-slider-thumb { 
-    -webkit-appearance: none; 
-    width: 24px; 
-    height: 24px; 
-    border-radius: 50%;
-    background: linear-gradient(135deg, #fff, #f1f5f9); 
-    border: 3px solid var(--primary-color);
-    margin-top: -8px; 
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2); 
-    transition: all 0.2s ease;
-}
-input[type=range]::-webkit-slider-thumb:hover {
-    transform: scale(1.1); 
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
-}
-
-/* --- 信息列表 --- */
-#info-display { 
-    margin-top: 15px; 
+/* --- 学术成就面板样式 --- */
+.academic-panel { 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
     overflow-y: auto; 
     flex-grow: 1; 
-    padding-right: 10px; 
+    padding: 5px 15px 5px 5px;
 }
-.info-item { 
-    padding: 15px; 
-    border-radius: 8px; 
-    margin-bottom: 10px;
-    border-left: 4px solid var(--border-color); 
-    transition: all 0.4s ease;
-    cursor: pointer;
-    background: white; 
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+@media (min-width: 1200px) {
+    .academic-panel { grid-template-columns: repeat(2, 1fr); }
+    #publications-card, #projects-card, #interests-card { grid-column: 1 / -1; }
 }
-.info-item:hover { 
-    background: var(--background-color); 
-    transform: translateX(5px); 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
-    border-left-color: var(--warning-color);
+.academic-category {
+    background: var(--controls-bg-color); border-radius: 12px;
+    margin-bottom: 0;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex; flex-direction: column;
 }
-.info-item.visited { 
-    background: var(--secondary-color-light); 
-    border-left-color: var(--success-color);
-    color: var(--text-color-light); 
-    opacity: 0.8; 
+.academic-category.is-active {
+    z-index: 10;
 }
-.info-item.current {
-    background: var(--primary-color-light); 
-    border-left-color: var(--primary-color);
-    color: var(--primary-color); 
-    font-weight: 500;
-    animation: breathe 2s ease-in-out infinite;
-    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+/* --- 替换/修改：为暗黑模式下的卡片添加科技感 --- */
+body.dark-mode .academic-category {
+    background: #1e293b; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    /* 新增一个默认的、非常暗的边框 */
+    border: 1px solid rgba(14, 165, 233, 0.15);
 }
-.transport-indicator {
-    display: inline-block; 
-    width: 20px; 
-    height: 20px;
-    margin-right: 8px; 
-    border-radius: 50%; 
-    vertical-align: middle;
+
+body.dark-mode .academic-category:hover { 
+    transform: translateY(-4px); 
+    border-color: var(--primary-color);
+    /* 核心：用 box-shadow 模拟辉光效果 */
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.3), /* 外部辉光 */
+                inset 0 0 15px rgba(14, 165, 233, 0.1); /* 内部微光 */
 }
+
+.category-header { padding: 15px 20px; display: flex; align-items: center; justify-content: center; font-weight: 500; font-size: 1.1em; border-bottom: 1px solid var(--border-color); gap: 10px; }
+.category-icon { margin-right: 0; font-size: 1.3em; }
+.category-content { padding: 20px; flex-grow: 1; }
+
+#publications-card .category-header { color: var(--paper-color); }
+#projects-card .category-header { color: var(--national-proj-color); }
+#awards-card .category-header { color: var(--other-proj-color); }
+#students-card .category-header { color: var(--book-color); }
+#interests-card .category-header { color: var(--patent-color); }
+body.dark-mode .category-header { color: var(--primary-color); }
+
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(95px, 1fr)); gap: 15px; margin-bottom: 20px; }
+.stat-item { padding: 12px; border-radius: 8px; text-align: center; transition: all 0.2s ease-out; border: 1px solid rgba(0, 0, 0, 0.05); box-shadow: inset 0 1px 2px rgba(0,0,0,0.05); }
+.stat-item:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 8px 15px rgba(0,0,0,0.1); border-color: rgba(0,0,0,0.1); }
+.stat-label { font-size: 0.85em; color: var(--text-color-light); font-weight: 500; }
+.stat-number { font-size: 1.6em; font-weight: 700; transition: color 0.3s; margin-top: 5px; }
+.stat-item:last-child { background: var(--secondary-color-light); }
+.stat-item:last-child .stat-number { color: var(--cumulative-color); }
+
+#papers-total-item { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); }
+#books-total-item { background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%); }
+#reports-total-item { background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%); }
+#patents-total-item { background: linear-gradient(135deg, #f0fdfa 0%, #dcfce7 100%); }
+#softwares-total-item { background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); }
+#national-proj-total-item { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); }
+#provincial-proj-total-item { background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%); }
+#other-proj-total-item { background: linear-gradient(135deg, #fefce8 0%, #fef9c3 100%); }
+
+/* --- 替换：为暗黑模式下的统计卡片注入科技感 --- */
+body.dark-mode .stat-item {
+    /* 1. 彻底移除单调的背景色 */
+    background-color: transparent;
+    /* 2. 引入科技感的扫描线背景，并叠加一个中心微光 */
+    background-image: 
+        radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.15), transparent 70%),
+        linear-gradient(rgba(14, 165, 233, 0.08) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 3px; /* 让辉光铺满，扫描线重复 */
+    border: 1px solid var(--border-color);
+    box-shadow: none; /* 移除默认的内阴影 */
+    transition: all 0.3s ease;
+}
+body.dark-mode .stat-item:hover {
+    transform: translateY(-4px) scale(1.05);
+    /* 3. 悬停时，背景变亮，边框发光，并出现辉光阴影 */
+    background-color: var(--primary-color-light);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(14, 165, 233, 0.4);
+}
+body.dark-mode .stat-item:last-child { background: #0f172a; }
+/* --- 新增：强制重置暗黑模式下所有 stat-item 的背景 --- */
+body.dark-mode #papers-total-item,
+body.dark-mode #books-total-item,
+body.dark-mode #reports-total-item,
+body.dark-mode #patents-total-item,
+body.dark-mode #softwares-total-item,
+body.dark-mode #national-proj-total-item,
+body.dark-mode #provincial-proj-total-item,
+body.dark-mode #other-proj-total-item
+{
+    /* 
+    重要：将背景强制设为 transparent，
+    这样我们在 .dark-mode .stat-item 中定义的科技风背景才能显现出来。
+    */
+    background: transparent;
+}
+
+#papers-total { color: var(--paper-color); } #books-total { color: var(--book-color); } #reports-total { color: var(--report-color); } #patents-total { color: var(--patent-color); } #softwares-total { color: var(--software-color); } #national-proj-total { color: var(--national-proj-color); } #provincial-proj-total { color: var(--provincial-proj-color); } #other-proj-total { color: var(--other-proj-color); }
+body.dark-mode .stat-number { color: var(--primary-color); }
+/* --- 在这里添加新规则 --- */
+body.dark-mode .stat-item:last-child .stat-number {
+    color: var(--primary-color); /* 强制“累计”数字在暗黑模式下也使用科技蓝 */
+}
+
+.chart-container { position: relative; height: 220px; margin-top: 10px; background: rgba(0,0,0,0.02); border-radius: 8px; padding: 10px; }
+body.dark-mode .chart-container { background: #0f172a; }
+
+.detail-list { list-style: none; padding: 0; margin: 0; }
+.detail-group { position: relative; margin-bottom: 5px; }
+.detail-subheader { display: flex; justify-content: space-between; align-items: center; margin: 10px 0 5px 0; font-size: 1em; padding: 8px 12px; border-radius: 6px; cursor: pointer; position: relative; transition: all 0.2s; }
+.detail-subheader-title { font-weight: 500; }
+.detail-count { color: white; padding: 2px 8px; border-radius: 10px; font-size: 0.8em; font-weight: bold; min-width: 20px; text-align: center; }
+
+/* --- 优化后的“获奖情况”样式 V2 --- */
+#awards-card .detail-subheader {
+    /* 1. 改为从白色开始的、更柔和的渐变 */
+    background: linear-gradient(135deg, #ffffff, #fffbeb); 
+    /* 2. 使用半透明的彩色边框，视觉上更柔和 */
+    border: 1px solid rgba(234, 179, 8, 0.3); 
+    transition: all 0.3s ease;
+}
+#awards-card .detail-subheader:hover {
+    transform: scale(1.02);
+    /* 3. 悬停时背景色稍深，边框变实，层次感更强 */
+    background: linear-gradient(135deg, #fffbeb, #fef9c3);
+    border-color: rgba(234, 179, 8, 0.6);
+    box-shadow: 0 4px 15px rgba(234, 179, 8, 0.15); /* 阴影也调淡一些 */
+}
+#awards-card .detail-subheader-title {
+    color: var(--other-proj-color);
+}
+#awards-card .detail-count {
+    background-color: var(--other-proj-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+#awards-card .detail-sublist li {
+    background-color: #fff; /* 默认纯白，更干净 */
+    /* 4. 默认状态的左边框也使用柔和的半透明色 */
+    border-left: 3px solid rgba(234, 179, 8, 0.25);
+    transition: all 0.2s ease-out; /* 让所有属性都参与过渡 */
+}
+#awards-card .detail-sublist li:hover {
+    background: #fffbeb;
+    border-left-color: var(--other-proj-color);
+    transform: translateX(4px);
+}
+/* --- 优化后的“研究生培养”样式 V2 --- */
+#students-card .detail-subheader {
+    /* 1. 改为从白色开始的、更柔和的渐变 */
+    background: linear-gradient(135deg, #ffffff, #f5f3ff);
+    /* 2. 使用半透明的彩色边框，视觉上更柔和 */
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    transition: all 0.3s ease;
+}
+#students-card .detail-subheader:hover {
+    transform: scale(1.02);
+    /* 3. 悬停时背景色稍深，边框变实，层次感更强 */
+    background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+    border-color: rgba(139, 92, 246, 0.5);
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.15); /* 阴影也调淡一些 */
+}
+#students-card .detail-subheader-title {
+    color: var(--book-color);
+}
+#students-card .detail-count {
+    background-color: var(--book-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+#students-card .student-list-item {
+    background-color: #fff; /* 默认纯白，更干净 */
+    /* 4. 默认状态的左边框也使用柔和的半透明色 */
+    border-left: 3px solid rgba(139, 92, 246, 0.2);
+    transition: all 0.2s ease-out; /* 让所有属性都参与过渡 */
+}
+#students-card .student-list-item:hover {
+    background: #f5f3ff;
+    border-left-color: var(--book-color);
+    transform: translateX(4px);
+}     
+/* --- 替换为这个最终修正版 --- */
+/* --- 最终版：修正和强化暗黑模式折叠列表的科技感 --- */
+body.dark-mode #awards-card .detail-subheader,
+body.dark-mode #students-card .detail-subheader {
+    /* 1. 使用高优先级选择器，强制应用暗黑模式背景 */
+    background: transparent;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+body.dark-mode #awards-card .detail-subheader:hover,
+body.dark-mode #students-card .detail-subheader:hover {
+    /* 2. 同理，修正悬停效果 */
+    background-color: var(--primary-color-light);
+    border-color: var(--primary-color);
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(14, 165, 233, 0.3);
+}
+
+body.dark-mode .detail-subheader-title {
+    color: var(--text-color-light);
+    text-shadow: none;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .detail-subheader:hover .detail-subheader-title {
+    color: #ffffff;
+    text-shadow: 0 0 8px #39814d;
+}
+
+body.dark-mode .detail-count {
+    background-color: var(--primary-color);
+    color: #020617;
+    box-shadow: 0 0 8px var(--primary-color);
+}
+
+.detail-menu { position: absolute; top: calc(100%); left: 0; width: 100%; box-sizing: border-box; z-index: 1010; background: var(--controls-bg-color); border-radius: 8px; box-shadow: 0 6px 25px rgba(0,0,0,0.15); border: 1px solid var(--border-color); padding: 10px; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.2s ease-out; max-height: 300px; overflow-y: auto; }
+body.dark-mode .detail-menu { background: #0f172a; box-shadow: 0 6px 25px rgba(0,0,0,0.5); }
+.detail-menu.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+.detail-sublist { list-style: none; padding: 0; margin: 0; }
+.detail-sublist li, .student-list-item { padding: 8px 12px; border-radius: 6px; margin-top: 5px; background: var(--secondary-color-light); font-size: 0.9em; transition: background 0.2s, border-color 0.2s; }
+#awards-card .detail-sublist li { border-left: 3px solid #fef9c3; }
+#awards-card .detail-sublist li:hover { background: #fefce8; border-left-color: var(--other-proj-color); }
+#students-card .student-list-item { border-left: 3px solid #ede9fe; }
+#students-card .student-list-item:hover { background: #f5f3ff; border-left-color: var(--book-color); }
+
+/* --- 替换：最终版的暗黑模式列表项样式 --- */
+body.dark-mode #awards-card .detail-sublist li,
+body.dark-mode #students-card .student-list-item {
+    /* 1. 修正默认状态：使用高优先级选择器强制设置背景和文字颜色 */
+    background: transparent;
+    color: var(--text-color-light); /* 保证文字清晰 */
+    border-left: 3px solid rgba(14, 165, 233, 0.3);
+    transition: all 0.2s ease-out;
+}
+
+body.dark-mode #awards-card .detail-sublist li:hover,
+body.dark-mode #students-card .student-list-item:hover {
+    /* 2. 统一悬停效果：以“研究兴趣”为基准 */
+    background: var(--primary-color); /* 实色高亮背景 */
+    color: white; /* 高对比度文字 */
+    border-left-color: #60a5fa; /* 更亮的边框颜色 */
+    transform: translateX(4px);
+    box-shadow: 0 0 10px var(--primary-color); /* 添加辉光 */
+}
+
+.detail-sublist li small { color: var(--secondary-color); margin-right: 8px; }
+.student-list-item strong { color: var(--text-color-light); font-size: 0.9em; }
+
+@keyframes fadeInTag { from { opacity: 0; transform: translateY(10px) scale(0.9); } to { opacity: 1; transform: translateY(0) scale(1); } }
+#research-interests-list { list-style-type: none; padding-left: 0; display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px; }
+#research-interests-list li { padding: 8px 18px; border-radius: 20px; font-size: 0.9em; font-weight: 500; transition: all 0.2s ease-out; opacity: 0; animation: fadeInTag 0.5s ease-out forwards; border: 1px solid rgba(0,0,0,0.05); }
+#research-interests-list li:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+#research-interests-list li:nth-child(1) { animation-delay: 0.1s; } #research-interests-list li:nth-child(2) { animation-delay: 0.2s; } #research-interests-list li:nth-child(3) { animation-delay: 0.3s; } #research-interests-list li:nth-child(4) { animation-delay: 0.4s; } #research-interests-list li:nth-child(5) { animation-delay: 0.5s; } #research-interests-list li:nth-child(6) { animation-delay: 0.6s; } #research-interests-list li:nth-child(n+7) { animation-delay: 0.7s; }
+
+#research-interests-list li:nth-child(6n + 1) { background: linear-gradient(135deg, #eff6ff, #dbeafe); color: var(--paper-color); }
+#research-interests-list li:nth-child(6n + 2) { background: linear-gradient(135deg, #f5f3ff, #ede9fe); color: var(--book-color); }
+#research-interests-list li:nth-child(6n + 3) { background: linear-gradient(135deg, #fff7ed, #ffedd5); color: var(--provincial-proj-color); }
+#research-interests-list li:nth-child(6n + 4) { background: linear-gradient(135deg, #f0fdfa, #dcfce7); color: var(--patent-color); }
+#research-interests-list li:nth-child(6n + 5) { background: linear-gradient(135deg, #fdf2f8, #fce7f3); color: var(--report-color); }
+#research-interests-list li:nth-child(6n + 6) { background: linear-gradient(135deg, #fef2f2, #fee2e2); color: var(--national-proj-color); }
+
+body.dark-mode #research-interests-list li { color: var(--primary-color); background: var(--primary-color-light); border: 1px solid var(--primary-color); }
+body.dark-mode #research-interests-list li:hover { background: var(--primary-color); color: white; box-shadow: 0 0 15px rgba(14, 165, 233, 0.4); }
 
 /* --- Leaflet & 自定义地图元素 --- */
 .leaflet-popup-content-wrapper { 
-    background: rgba(255, 255, 255, 0.95); 
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12); 
-    border-radius: 12px;
+    background: var(--popup-bg-color); backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12); border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background-color 0.4s ease;
 }
-.leaflet-popup-content { 
-    font-family: var(--font-family); 
-    font-size: 14px; 
-    line-height: 1.6; 
-}
-.animated-path {
-    stroke-dasharray: 10, 10;
-    animation: flowingDash 1s linear infinite;
-}
-.pulsing-marker { 
-    animation: pulse-glow 2s infinite; 
-}
-
-/* --- 自定义SVG图标样式 --- */
+body.dark-mode .leaflet-popup-content-wrapper { border-color: var(--border-color); color: var(--text-color); box-shadow: 0 8px 32px rgba(0,0,0,0.5); }
+.leaflet-popup-content { font-family: var(--font-family); font-size: 14px; line-height: 1.6; }
 .direction-indicator-wrapper {
-    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
-    background: rgba(255,255,255,0.9);
-    border-radius: 50%;
-    padding: 4px;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3)); background: var(--controls-btn-bg);
+    border-radius: 50%; padding: 4px; width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center; box-sizing: border-box;
 }
-.direction-indicator-svg {
-    width: 24px;
-    height: 24px;
-    transition: transform 0.3s ease;
-}
+body.dark-mode .direction-indicator-wrapper { background: #e2e8f0; }
+.direction-indicator-svg { width: 24px; height: 24px; transition: transform 0.3s ease; }
+.tech-glow-path { filter: drop-shadow(0 0 3px var(--primary-color)); }
+body.dark-mode .tech-glow-path { filter: drop-shadow(0 0 5px var(--primary-color)); }
+.trajectory-path { stroke-width: 3.5px; }
 
 /* --- 响应式设计 --- */
-@media (max-width: 992px) {
-    body { 
-        padding: 10px; 
-    }
-    .main-container { 
-        flex-direction: column; 
-    }
-    .controls-container { 
-        width: 100%; 
-        margin-top: 20px; 
-        height: auto; 
-    }
-    #map { 
-        height: 60vh; 
-    }
-    .map-controls {
-        left: 10px;
-        top: 80px;
-        flex-direction: column;
-        gap: 10px;
-    }
-    .map-controls button {
-        width: 45px;
-        height: 45px;
-        font-size: 14px;
-    }
-    .speed-menu {
-        top: 0;
-        left: calc(100% + 10px);
-        transform: translateX(0);
-        min-width: auto;
-        padding: 4px;
-    }
-    .speed-menu.visible {
-        transform: translateX(0) translateY(0);
-    }
-    .speed-menu button {
-        padding: 6px 12px;
-    }
+@media (max-width: 1199px) {
+    body { padding: 10px; }
+    .main-container { flex-direction: column; }
+    .controls-container { width: 100% !important; min-width: 0 !important; max-width: none !important; margin-top: 20px; height: auto; max-height: 70vh; }
+    #map { height: 60vh; }
+    .map-controls { left: 10px; top: 80px; flex-direction: column; gap: 10px; }
+    .map-controls button { width: 45px; height: 45px; font-size: 14px; }
+    .speed-menu { top: 0; left: calc(100% + 10px); transform: translateX(0); min-width: auto; padding: 4px; flex-direction: row; width: max-content; }
+    .speed-menu.visible { transform: translateX(0) translateY(0); }
+    .speed-menu button { padding: 6px 12px; }
+    .stat-number { font-size: 1.2em; }
+    .stat-label { font-size: 0.75em; }
+    .chart-container { height: 180px; }
+    .detail-menu { min-width: 0; width: 100%; max-height: 250px; }
+    .trajectory-path { stroke-width: 2.5px; }
+}
+/* --- 新增：为暗黑模式定制科技感滚动条 --- */
+body.dark-mode .academic-panel::-webkit-scrollbar {
+    width: 8px;
+}
+body.dark-mode .academic-panel::-webkit-scrollbar-track {
+    background: rgba(14, 165, 233, 0.05); /* 轨道背景 */
+    border-radius: 4px;
+}
+body.dark-mode .academic-panel::-webkit-scrollbar-thumb {
+    background: var(--primary-color); /* 滚动条颜色 */
+    border-radius: 4px;
+    border: 1px solid rgba(14, 165, 233, 0.5);
+}
+body.dark-mode .academic-panel::-webkit-scrollbar-thumb:hover {
+    background: #60a5fa; /* 悬停时更亮 */
+    box-shadow: 0 0 10px rgba(96, 165, 250, 0.7);
+}
+/* --- 新增：为暗黑模式下的图表添加辉光效果 --- */
+body.dark-mode .chart-container canvas {
+    filter: drop-shadow(0 0 10px rgba(14, 165, 233, 0.3));
+    transition: filter 0.3s ease-out;
+}
+body.dark-mode .chart-container:hover canvas {
+    filter: drop-shadow(0 0 15px rgba(14, 165, 233, 0.5));
 }
