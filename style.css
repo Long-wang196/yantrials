@@ -84,10 +84,21 @@ body {
 }
 body.dark-mode { background: #020617; } /* Solid very-dark background */
 .page-title {
-            color: var(--text-color); margin-bottom: 20px; font-weight: 500; font-size: 2.5em;
-            background: linear-gradient(135deg, var(--primary-color), var(--plane-color));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            text-align: center; animation: slideIn 0.6s ease-out;
+    color: var(--text-color); 
+    margin-bottom: 20px; 
+    font-weight: 500; 
+    font-size: 2.5em;
+    text-align: center; 
+    animation: slideIn 0.6s ease-out;
+    
+    /* 1. 更新渐变色：从主色调蓝到一个更明亮的天空蓝，更契合白天模式 */
+    background: linear-gradient(135deg, var(--primary-color), #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* 2. 添加一个柔和的、有层次感的阴影，营造立体感 */
+    /* 这是一个微妙的、向下偏移的蓝色阴影，显得非常精致 */
+    text-shadow: 0 2px 8px rgba(59, 130, 246, 0.25);
 }
 body.dark-mode .page-title {
     color: var(--primary-color); background: none;
@@ -579,5 +590,4 @@ body.dark-mode .chart-container canvas {
 }
 body.dark-mode .chart-container:hover canvas {
     filter: drop-shadow(0 0 15px rgba(14, 165, 233, 0.5));
-
 }
