@@ -20,7 +20,7 @@
         "交通工具建议": "火车",
         "transport_mode": "train"
       },
-      "geometry": { "type": "Point", "coordinates": [ 114.298572, 30.584355 ] }
+      "geometry": { "type": "Point", "coordinates": [ 114.3643, 30.5360 ] }
     },
     {
       "type": "Feature",
@@ -31,7 +31,7 @@
         "交通工具建议": "火车",
         "transport_mode": "train"
       },
-      "geometry": { "type": "Point", "coordinates": [ 103.823557, 36.058039 ] }
+      "geometry": { "type": "Point", "coordinates": [ 103.8463, 36.0522 ] }
     },
     {
       "type": "Feature",
@@ -42,7 +42,7 @@
         "交通工具建议": "火车",
         "transport_mode": "train"
       },
-      "geometry": { "type": "Point", "coordinates": [ 114.298572, 30.584355 ] }
+      "geometry": { "type": "Point", "coordinates": [ 114.3643, 30.5360 ] }
     },
     {
       "type": "Feature",
@@ -53,7 +53,7 @@
         "交通工具建议": "火车",
         "transport_mode": "train"
       },
-      "geometry": { "type": "Point", "coordinates": [ 103.823557, 36.058039 ] }
+      "geometry": { "type": "Point", "coordinates": [ 103.7243, 36.1057 ] }
     },
     {
       "type": "Feature",
@@ -64,7 +64,7 @@
         "交通工具建议": "火车",
         "transport_mode": "train"
       },
-      "geometry": { "type": "Point", "coordinates": [ 114.298572, 30.584355 ] }
+      "geometry": { "type": "Point", "coordinates": [ 114.3643, 30.5360 ] }
     },
     {
       "type": "Feature",
@@ -97,7 +97,7 @@
         "交通工具建议": "飞机",
         "transport_mode": "plane"
       },
-      "geometry": { "type": "Point", "coordinates": [ 114.177216, 22.302711 ] }
+      "geometry": { "type": "Point", "coordinates": [ 114.1796, 22.3046 ] }
     },
     {
       "type": "Feature",
@@ -108,7 +108,7 @@
         "交通工具建议": "飞机/火车",
         "transport_mode": "plane"
       },
-      "geometry": { "type": "Point", "coordinates": [ 103.823557, 36.058039 ] }
+      "geometry": { "type": "Point", "coordinates": [ 103.7243, 36.1057 ] }
     },
     {
       "type": "Feature",
@@ -119,7 +119,7 @@
         "交通工具建议": "飞机",
         "transport_mode": "plane"
       },
-      "geometry": { "type": "Point", "coordinates": [ 8.541694, 47.3768866 ] }
+      "geometry": { "type": "Point", "coordinates": [ 8.5487, 47.3746 ] }
     },
     {
       "type": "Feature",
@@ -130,7 +130,7 @@
         "交通工具建议": "飞机/火车",
         "transport_mode": "plane"
       },
-      "geometry": { "type": "Point", "coordinates": [ 103.823557, 36.058039 ] }
+      "geometry": { "type": "Point", "coordinates": [ 103.7243, 36.1057 ] }
     },
     {
       "type": "Feature",
@@ -141,7 +141,7 @@
         "交通工具建议": "飞机",
         "transport_mode": "plane"
       },
-      "geometry": { "type": "Point", "coordinates": [ -80.52041, 43.46426 ] }
+      "geometry": { "type": "Point", "coordinates": [ -80.5449, 43.4723 ] }
     },
     {
       "type": "Feature",
@@ -152,7 +152,7 @@
         "交通工具建议": "飞机",
         "transport_mode": "plane"
       },
-      "geometry": { "type": "Point", "coordinates": [ -76.285873, 36.8529 ] }
+      "geometry": { "type": "Point", "coordinates": [ -76.3059, 36.8853 ] }
     },
     {
       "type": "Feature",
@@ -163,7 +163,7 @@
         "交通工具建议": "飞机/火车",
         "transport_mode": "plane"
       },
-      "geometry": { "type": "Point", "coordinates": [ 103.823557, 36.058039 ] }
+      "geometry": { "type": "Point", "coordinates": [ 103.7243, 36.1057 ] }
     }
   ]
 }
