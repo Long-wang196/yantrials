@@ -84,9 +84,6 @@
 
 3.  **保存并刷新**: 保存您修改后的 `.geojson` 文件，然后刷新 `index.html` 页面即可看到您的专属轨迹图！
 
-## 许可协议
-
-本项目基于 [MIT License](LICENSE) 开源。
 
 ---
 ---
@@ -177,6 +174,3 @@ You can easily adapt this project to visualize your own personal journey.
 
 3.  **Save and Refresh**: Save your modified `.geojson` file and refresh the `index.html` page in your browser to see your personalized trajectory map!
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
